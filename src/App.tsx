@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 
 
-const App = () => {
+const App: React.FC = () => {
 
 
   const [text, setText] = React.useState<string>('WOW')
@@ -10,8 +10,14 @@ const App = () => {
 
   return(
     <div className='App'>
-      <h1>{text}!!! It works!</h1>
-      <span onClick={()=> {setText('LOL')}}>Click me</span>
+      <h1>
+        {text}
+        !!! It works!
+      </h1>
+
+      <span onClick={() => { setText('LOL') }}>
+        Click me
+      </span>
     </div>
   )
 }

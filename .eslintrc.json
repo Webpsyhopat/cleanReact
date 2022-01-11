@@ -1,0 +1,69 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 13
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "never"
+    ],
+    "@typescript-eslint/no-var-requires": 0,
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/boolean-prop-naming": [
+      "error",
+      {
+        "rule": "^(is|has)[A-Z]([A-Za-z0-9]?)+"
+      }
+    ],
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function"
+      }
+    ],
+    "react/no-invalid-html-attribute": "error",
+    "react/jsx-newline": [2,
+      {
+        "prevent": false
+      }
+    ],
+    "react/jsx-one-expression-per-line": [2,
+      {
+        "allow": "literal"
+      }
+    ]
+  }
+}

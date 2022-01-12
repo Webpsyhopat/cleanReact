@@ -15,17 +15,17 @@ module.exports = {
         options: { presets: ['@babel/env'] }
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         loader: 'ts-loader'
-      }
-    ]
+      },
+    ],
   },
-  devtool: prod ? undefined : 'source-map',
+  devtool: prod ? 'source-map' : 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
       template: 'public/index.html',
@@ -34,7 +34,12 @@ module.exports = {
       extensions: ['js', 'ts', 'jsx', 'tsx']
     })
   ],
-  resolve: { extensions: ['*', '.ts', '.tsx', '.js', '.jsx'] },
+  resolve: {
+    extensions: ['*', '.ts', '.tsx', '.js', '.jsx'],
+    alias: {
+      scss: path.resolve(__dirname, 'src/scss')
+    }
+  },
   output: {
     path: path.resolve(__dirname, 'dist/'),
     publicPath: '/dist/',
